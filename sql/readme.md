@@ -85,6 +85,7 @@ This was done manually in SQL Server Management Studio
 In order to determine which two teams played each other for each game, I had to join the tables by game_id to create a master table in which we will be studying:
 
 ```sql
+select * into main_table from 
 (select dbo.mytable.game_id, dbo.blue_teams.blue_team_name, dbo.blue_teams.blue_team_region, dbo.blue_teams.blue_winner,
 dbo.orange_teams.orange_team_name, dbo.orange_teams.orange_team_region, dbo.orange_teams.orange_winner
 from dbo.mytable
