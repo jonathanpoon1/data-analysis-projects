@@ -1,3 +1,5 @@
+setwd("~/to website/r project (rlcs)")
+
 data <- read.csv("matches_by_teams.csv")
 
 #need to remove rows with NA values
@@ -140,4 +142,20 @@ plot (mfinal$fitted.values, mfinal$residuals, xlab= "Fitted Values", ylab = "Res
 
 plot (1:nrow(data), mfinal$residuals, xlab= "Index", ylab = "Residuals", main="Residuals vs. Index")
 #this shows no relationship of index and residualsfor (i in 1:n){
+
+
+rounded_predictions <- round(predf , digits=0)
+min(rounded_predictions)
+max(rounded_predictions)
+
+rounded_predictions <- replace(rounded_predictions, rounded_predictions == -1, 0)
+rounded_predictions <- replace(rounded_predictions, rounded_predictions == 2, 1)
+
+min(rounded_predictions)
+max(rounded_predictions)
+
+compare <- (rounded_predictions == data$winner)
+sum(compare)
+
+sum(compare) / length(compare)
 
